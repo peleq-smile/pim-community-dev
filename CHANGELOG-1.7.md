@@ -97,3 +97,11 @@
 - Change the constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes` to remove the tenth argument `tmpStorageDir` and add `Pim\Component\Enrich\Converter\ConverterInterface`
 - Change the constructor of `Pim\Bundle\EnrichBundle\Normalizer\GroupNormalizer` to add `Pim\Component\Enrich\Converter\ConverterInterface`
 - Change the constructor of `Pim\Bundle\EnrichBundle\Normalizer\ProductNormalizer` to add `Pim\Component\Enrich\Converter\ConverterInterface`
+- Change constructor of `Pim\Bundle\CatalogBundle\EventSubscriber\MongoDBODM\ProductRelatedEntityRemovalSubscriber`:
+    replace `Doctrine\Common\Persistence\ManagerRegistry` argument by `Akeneo\Component\Console\CommandLauncher`,
+    second argument was the product class parameter and is replaced by the `ProductRelatedEntityRemovalCommand` logfile
+- Change constructor of `Pim\Bundle\CatalogBundle\EventSubscriber\MongoDBODM\RemoveOutdatedProductsFromAssociationsSubscriber`.
+    Replace `Pim\Bundle\CatalogBundle\Doctrine\MongoDBODM\ProductRepositoryInterface` argument by `Akeneo\Component\Console\CommandLauncher`
+    and `Pim\Component\Catalog\Repository\AssociationTypeRepositoryInterface` argument by a string (`RemoveOutdatedProductsFromAssociationsCommand` logfile)
+- Change constructor of `Pim\Bundle\CatalogBundle\EventSubscriber\MongoDBODM\UpdateNormalizedProductDataSubscriber`.
+    Replace `Doctrine\Common\Persistence\ManagerRegistry` argument by `Akeneo\Component\Console\CommandLauncher` and add a string as third argument (`UpdateNormalizedProductDataCommand` logfile)

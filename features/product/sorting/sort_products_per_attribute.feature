@@ -31,7 +31,7 @@ Feature: Sort products per attributes
     When I check the "Handmade" switch
     And I press the "Save" button
     Then I should not see the text "There are unsaved changes."
-    When I am on the products page
-    Then the grid should contain 5 elements
-    When I display the columns sku, label, family, status, complete, created, updated, groups and handmade
-    Then I should be able to sort the rows by Handmade
+    And I am on the products page
+    And the grid should contain 5 elements
+    And I display the columns SKU, Label, Family, Status, Complete, Created at, Updated at, Groups and Handmade
+    And I should be able to sort the rows by Handmade

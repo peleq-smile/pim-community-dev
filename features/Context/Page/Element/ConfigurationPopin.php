@@ -27,7 +27,7 @@ class ConfigurationPopin extends Element
     {
         $searchInput = $this->spin(function () {
             return $this->find('css', 'input[type="search"]');
-        });
+        }, 'Column search input not found');
 
         $dropZone = $this->spin(function () {
             return $this->find('css', '#column-selection');
